@@ -16,7 +16,7 @@ const BookList = ({ books }) => {
     books.length > 0 &&
     books.map(({ id, volumeInfo }) => {
       return (
-        <div style={{ display: "flex", paddingTop: "30px" }}>
+        <div style={{ display: "flex", paddingTop: "30px" }} key={id}>
           <div style={{ width: "150px" }}>
             <img
               style={{
@@ -30,11 +30,11 @@ const BookList = ({ books }) => {
               }
             />
             {!id ? (
-              <button style={buttonStyle} type="success" className="input-lg">
+              <button style={buttonStyle} type="success">
                 Save
               </button>
             ) : (
-              <button style={buttonStyle} type="danger" className="input-lg">
+              <button style={buttonStyle} type="danger">
                 Delete
               </button>
             )}

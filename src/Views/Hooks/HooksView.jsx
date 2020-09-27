@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import UssingClass from "../../Components/Books/UsingClass";
-import UsingHooks from "../../Components/Books/UsingHooks";
+import UsingClass from "../../Components/Hooks/UsingClass";
+import UsingHooks from "../../Components/Hooks/UsingHooks";
 
-
-class Books extends Component {
+class HooksView extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -18,12 +17,12 @@ class Books extends Component {
         </span>
 
         <span>
-        <b> Ussing class:</b> 
-          <UssingClass />
+          <b> Ussing class:</b>
+          <UsingClass />
         </span>
       </div>
     );
   }
 }
 
-export default Books;
+export default HooksView;

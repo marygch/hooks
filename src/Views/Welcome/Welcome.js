@@ -3,17 +3,17 @@ import React from "react";
 const Welcome = () => {
   return (
     <div>
-      <div class="codeBlockWrapper_2QGZ">
-        <div class="prism-code language-sh codeBlock_19pQ">
+      <div className="codeBlockWrapper_2QGZ">
+        <div className="prism-code language-sh codeBlock_19pQ">
           <b>Creado con:</b>
-          <div class="token-line">
-            <span class="token plain">npx create-react-app my-app</span>
+          <div className="token-line">
+            <span className="token plain">npx create-react-app my-app</span>
           </div>
-          <div class="token-line">
-            <span class="token plain">cd my-app</span>
+          <div className="token-line">
+            <span className="token plain">cd my-app</span>
           </div>
-          <div class="token-line">
-            <span class="token plain">npm start</span>
+          <div className="token-line">
+            <span className="token plain">npm start</span>
           </div>
         </div>
         <br />

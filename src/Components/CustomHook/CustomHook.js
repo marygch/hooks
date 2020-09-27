@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import useFetchBook from "./useFetchBook";
-import BookList from "./BookList";
+import BookList from "../Books";
 
-const Book = () => {
+const CustomHook = () => {
   const [searchTerm, setSearchTerm] = useState("Los hombres que no amaban");
   const { loading, books } = useFetchBook(searchTerm);
 
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div>
         <input
           style={{ width: "100%" }}
           key="search"
@@ -16,12 +16,14 @@ const Book = () => {
             setSearchTerm(e.target.value);
           }}
           value={searchTerm}
-        />
+        />{" "}
       </div>
-      <div>{loading ? "loading data ..." : "My favorite book:"}</div>
-      <BookList books={books} />
+      <div>
+        {loading ? "loading data ..." : "My favorite book:"}
+        <BookList books={books} />
+      </div>
     </>
   );
 };
 
-export default Book;
+export default CustomHook;

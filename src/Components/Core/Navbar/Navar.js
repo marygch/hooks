@@ -5,10 +5,10 @@ import "./style.css";
 const Navbar = () => {
   return (
     <header className="header-section-other">
-      <div class="container-fluid">
-        <div class="logo"> Maria Garcia-CH</div>
-        <div class="nav-menu">
-          <nav class="main-menu mobile-menu">
+      <div className="container-fluid">
+        <div className="logo"> Maria Garcia-CH</div>
+        <div className="nav-menu">
+          <nav className="main-menu mobile-menu">
             <ul>
               <li>
                 <NavLink activeClassName="active" exact to="/">
@@ -16,12 +16,12 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink activeClassName="active" exact to="/books">
+                <NavLink activeClassName="active" exact to="/hooks">
                   Hooks vs Class
                 </NavLink>
               </li>
               <li>
-                <NavLink activeClassName="active" exact to="/myfav">
+                <NavLink activeClassName="active" exact to="/customHook">
                   Custom Hooks
                 </NavLink>
               </li>

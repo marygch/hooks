@@ -14,8 +14,9 @@ const useFetchBook = (searchTerm) => {
           setBooks({ books: res.data.items });
         })
         .catch((err) => console.log(err));
-    }, 3000);
+    }, 2000);
   };
+  // Like didUpdate
   useEffect(handleSearchBooks, [searchTerm]);
   return books;
 };

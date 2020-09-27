@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../API/api";
-import BookList from "./BookList";
+import BookList from "../Books";
 
 const UsingHooks = () => {
   const [searchTerm, setSearchTerm] = useState("Los hombres que no amaban");

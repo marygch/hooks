@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../API/api";
-import BookList from "./BookList";
+import BookList from "../Books";
 
 class UsingClass extends Component {
   constructor(props) {
