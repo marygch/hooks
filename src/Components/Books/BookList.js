@@ -1,50 +1,35 @@
 import React from "react";
+import { Row, Col, Divider } from 'antd';
+
 
 const BookList = ({ books }) => {
-  if (!books || books.length === 0) {
+  if (!books || books?.length === 0) {
     return [];
   }
-  const buttonStyle = {
-    width: "100%",
-    height: "30px",
-    borderRadius: "5px",
-    color: "white",
-    backgroundColor: "#6c6771",
-  };
-
+console.log("books", books)
   return (
-    books.length > 0 &&
-    books.map(({ id, volumeInfo }) => {
+    books?.length > 0 &&
+    books?.map(({ id, volumeInfo }) => {
       return (
-        <div style={{ display: "flex", paddingTop: "30px" }} key={id}>
-          <div style={{ width: "150px" }}>
+        <Row gutter={16} >
+          <Divider orientation="left" />
+          <Col className="gutter-row" span={5}>
             <img
-              style={{
-                maxHeight: "200px",
-              }}
+              style={{ maxHeight: "100px" }}
               alt="#"
               src={
-                volumeInfo.imageLinks === undefined
-                  ? "http://siddallheatingandcooling.net/_imgstore/5/1360415/thumbnail/FSeY96wEdX_eY4XkBN2jfYnuY9A.png"
-                  : `${volumeInfo.imageLinks.thumbnail}`
+                volumeInfo?.imageLinks?.thumbnail
+                  ? `${volumeInfo.imageLinks.thumbnail}`
+                  : "https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty.jpg"
               }
             />
-            {!id ? (
-              <button style={buttonStyle} type="success">
-                Save
-              </button>
-            ) : (
-              <button style={buttonStyle} type="danger">
-                Delete
-              </button>
-            )}
-          </div>
-          <div style={{ paddingLeft: "30px", width: "100%" }}>
-            <h5>{volumeInfo.title}</h5>
-            <p>Written By {[volumeInfo.authors].flat().join(", ")}</p>
+          </Col>
+          <Col className="gutter-row" span={19}>
+            <b>{volumeInfo.title}</b>
+            <p><b>Written By </b> {[volumeInfo.authors].flat().join(", ") || "Not found"}</p>
             <p>
               {volumeInfo.description
-                ? `${volumeInfo.description.substring(0, 150)} ...`
+                ? `${volumeInfo.description.substring(0, 30)} ...`
                 : "..."}
               <a
                 rel="noreferrer noopener"
@@ -55,8 +40,8 @@ const BookList = ({ books }) => {
                 View
               </a>
             </p>
-          </div>
-        </div>
+          </Col>
+        </Row>
       );
     })
   );

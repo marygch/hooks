@@ -1,9 +1,12 @@
 import React from "react";
+import { Layout, Menu, Breadcrumb } from 'antd';
+
+const { Header, Footer, Sider: AntdSider, Content } = Layout;
 
 const Welcome = () => {
   return (
-    <div>
-      <div className="codeBlockWrapper_2QGZ">
+    <Layout className="site-layout-background" style={{ padding: '24px 0' }}>
+      <Content style={{ padding: '0 24px', minHeight: 280 }}>
         <div className="prism-code language-sh codeBlock_19pQ">
           <b>Creado con:</b>
           <div className="token-line">
@@ -57,8 +60,8 @@ const Welcome = () => {
             </span>
           </div>
         </div>
-      </div>
-    </div>
+      </Content>
+    </Layout>
   );
 };
 

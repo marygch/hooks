@@ -1,4 +1,5 @@
 import Navbar from "./Navbar/Navar";
-import Content from "./Content/Content";
+import Sider from './Menu/Menu';
+import MemoSelect from './MemoSelect/MemoSelect';
 
-export { Navbar, Content };
+export { Navbar, Sider, MemoSelect };

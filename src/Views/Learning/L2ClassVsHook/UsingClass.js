@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import API from "../../API/api";
-import BookList from "../Books";
+import { Button, Input, Row, Col } from 'antd';
+import API from "../../../API/api";
+import BookList from "../../../Components/Books";
 
 class UsingClass extends Component {
   constructor(props) {
@@ -9,12 +10,12 @@ class UsingClass extends Component {
       searchTerm: "La chica que soñaba",
     };
   }
+
   componentDidMount() {
     this.handleSearchBooks();
   }
 
   handleSearchBooks = () => {
-    // calls googlebooks api and returns searched book when search button is clicked
     const { searchTerm } = this.state;
     API.searchBooks(searchTerm)
       .then((res) => {
@@ -26,27 +27,22 @@ class UsingClass extends Component {
   render() {
     const { books, searchTerm } = this.state;
     return (
-      <div>
-        <input
-          style={{ width: "70%" }}
-          key="search"
-          onChange={(e) => {
-            this.setState({ searchTerm: e.target.value });
-          }}
-          value={searchTerm}
-        />
-        <button
-          style={{
-            width: "25%",
-            padding: "5px",
-            marginLeft: "5px", 
-          }}
-          onClick={this.handleSearchBooks}
-        >
-          Search
-        </button>
+      <>
+        <Row gutter={16}>
+          <Col className="gutter-row" span={20}>
+            <Input key="search"
+              onChange={(e) => this.setState({ searchTerm: e.target.value })}
+              value={searchTerm}
+            />
+          </Col>
+          <Col className="gutter-row" span={4}>
+            <Button type="primary" onClick={this.handleSearchBooks}>
+              Search
+            </Button>
+          </Col>
+        </Row>
         <BookList books={books} />
-      </div>
+      </>
     );
   }
 }
