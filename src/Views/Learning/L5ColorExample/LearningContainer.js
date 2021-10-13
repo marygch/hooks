@@ -19,7 +19,7 @@ class LearningView extends Component {
           <div style={{ paddingBottom: "50px" }}> Color example</div>
           <UsingHooks />
         </Col>
-        <Col className="gutter-row" span={24}>
+        <Col className="gutter-row" span={24} style={{ paddingTop: "50px" }}>
           <CopyBlock
             language="jsx"
             text={code}
